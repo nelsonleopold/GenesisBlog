@@ -11,5 +11,6 @@ namespace GenesisBlog.Data
         {
         }
         public DbSet<GenesisBlog.Models.BlogPost> BlogPost { get; set; }
+        public DbSet<GenesisBlog.Models.BlogPostComment> BlogPostComment { get; set; }
     }
 }

@@ -27,7 +27,8 @@
 
             <div class="form-group">
                 <label asp-for="Content" class="control-label"></label>
-                <textarea asp-for="Content" class="form-control" rows="10"></textarea>
+                <div id="Body"></div>
+                <input type="hidden" asp-for="Content" class="form-control" />
                 <span asp-validation-for="Content" class="text-danger"></span>
             </div>
 
@@ -44,5 +45,16 @@
 </div>
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+    await Html.RenderPartialAsync("_ValidationScriptsPartial");
+}
+
+<script>
+
+    document.querySelector("form").addEventListener("submit", function(){
+
+        document.getElementById("Content".value = quill.getText();
+    });
+
+</script>
 }
